@@ -4,10 +4,6 @@
   "main": "index.js",
   "author": "PBillingsby",
   "license": "MIT",
-  "scripts": {
-    "simulate": "npx ts-node index.ts",
-    "addContract": "npx ts-node add.ts"
-  },
   "dependencies": {
     "@tenderly/sdk": "^0.1.14",
     "dotenv": "^16.3.1",

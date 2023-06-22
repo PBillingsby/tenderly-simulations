@@ -2,12 +2,32 @@ import { Interface } from 'ethers';
 import { TransactionParameters } from '@tenderly/sdk';
 import * as dotenv from 'dotenv';
 import tenderlyInstance from './utils/tenderlyInstance';
-import abi from './contracts/abi.ts';
 
 dotenv.config();
 
 const abiInterface = (): Interface => {
-  return new Interface(abi);
+  return new Interface([
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]);
 }
 
 const CONTRACT_OWNER: string = '0xdd00cc906b93419814443bb913949d503b3df3c4';
